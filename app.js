@@ -50,10 +50,10 @@ function createTeam() {
             // push responses to teamMembers array
             .then(data => {
 
-                // const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.officeNumber);
+                const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.officeNumber);
 
-                // teamMembers.push(manager);
-                // idArray.push(data.managerId);
+                teamMembers.push(manager);
+                idArray.push(data.managerId);
 
                 console.log(data.managerName)
                 console.log(data.managerEmail);
@@ -194,3 +194,4 @@ function createTeam() {
 
 
 createTeam();
+
