@@ -50,14 +50,14 @@ function createTeam() {
             // push responses to teamMembers array
             .then(data => {
 
-                const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.officeNumber);
+                const managerNameUpper = data.managerName.substring(0, 1).toUpperCase() + data.managerName.substring(1);
+
+                const manager = new Manager(managerNameUpper, data.managerId, data.managerEmail, data.officeNumber);
 
                 teamMembers.push(manager);
                 idArray.push(data.managerId);
 
-                console.log(data.managerName)
-                console.log(data.managerEmail);
-                console.log(data.managerId);
+                
                 // call function createTeamMember to input other employees(not managers)
                 createTeamMember();
 
@@ -128,8 +128,12 @@ function createTeam() {
 
                 .then(answers => {
 
-                    const engineer = new Engineer(
-                        answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+                    const engineerNameUpper = answers.engineerName.substring(0, 1).toUpperCase() + answers.engineerName.substring(1);
+
+                    
+
+                     const engineer = new Engineer(
+                        engineerNameUpper, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
 
                     teamMembers.push(engineer);
                     idArray.push(answers.engineerId);
@@ -167,7 +171,11 @@ function createTeam() {
                 ])
                 .then(answers => {
 
-                    const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+                    const internNameUpper = answers.internName.substring(0, 1).toUpperCase() + answers.internName.substring(1);
+
+                    
+
+                    const intern = new Intern(internNameUpper, answers.internId, answers.internEmail, answers.internSchool);
 
                     teamMembers.push(intern);
                     idArray.push(answers.internId);
