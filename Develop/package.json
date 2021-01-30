@@ -8,8 +8,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest --verbose test/*"
+    "test": "jest"
   },
+
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stevetrilogy/unit10hw.git"
