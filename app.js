@@ -129,11 +129,12 @@ function createTeam() {
                 .then(answers => {
 
                     const engineerNameUpper = answers.engineerName.substring(0, 1).toUpperCase() + answers.engineerName.substring(1);
+                    const engineerGithubLink = `github.com/${answers.engineerGithub}`;
 
                     
 
                      const engineer = new Engineer(
-                        engineerNameUpper, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+                        engineerNameUpper, answers.engineerId, answers.engineerEmail, engineerGithubLink);
 
                     teamMembers.push(engineer);
                     idArray.push(answers.engineerId);
