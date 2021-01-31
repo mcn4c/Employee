@@ -19,6 +19,12 @@
 
 ## User_Story
 
+
+This app is helpfule to an engineering team that wishes to be able to enter employee information in fast manner using command line interface.  Through this app, a user is able to create an html document with any number of employees.  All emplyees will be added to the html doc with inherited styling and apealing display. 
+
+This application simplifies the process of adding employees to a team display.
+
+
 ## Installation
 
  node js, Jest, and inquirer

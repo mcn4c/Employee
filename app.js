@@ -26,12 +26,23 @@ function createTeam() {
                     type: 'input',
                     name: "managerName",
                     message: "What is the team manager's name?",
-                },
+
+                    validate: data => {
+                        if (anser !=="") {
+                            return true;}
+                        else {
+                            return "Please enter a name";
+                        }
+                }
+            },
 
                 {
                     type: 'input',
                     name: "managerId",
                     message: "Manager's employee ID:",
+                    validate: data => {
+                        const pass = data.match()
+                    }
                 },
 
                 {
@@ -43,8 +54,11 @@ function createTeam() {
                 {
                     type: "input",
                     name: "officeNumber",
-                    message: "Manager's office number:"
-                }
+                    message: "Manager's office number:",
+                    
+                        }
+                    
+                
 
             ])
             // push responses to teamMembers array
