@@ -1,3 +1,5 @@
+
+// create constants to 
 const Engineer = require("./Develop/lib/Engineer");
 const Intern = require("./Develop/lib/Intern");
 const Manager = require("./Develop/lib/Manager")
@@ -15,7 +17,7 @@ const idArray = [];
 // createTeam function will call at the end
 function createTeam() {
 
-    // begin with manager prompts
+    // manager prompts to start team inquiry
     function createManager() {
 
         console.log("Begin making your employee database")
@@ -61,7 +63,7 @@ function createTeam() {
                 
 
             ])
-            // push responses to teamMembers array
+            // push responses to teamMembers array + id array
             .then(data => {
 
                 const managerNameUpper = data.managerName.substring(0, 1).toUpperCase() + data.managerName.substring(1);
@@ -79,11 +81,12 @@ function createTeam() {
 
 
     }
-
+// call createManager
     createManager();
 
+    // createTeamMember function defined
     function createTeamMember() {
-        // choose wich type of team member to add unless no more employees to be added
+        // choose wich type of team member to add unless no more employees to be added --> type of employee chosen indicates which set of questions will follow
         inquirer.prompt({
                     type: "list",
                     name: "employeeRole",
@@ -111,7 +114,7 @@ function createTeam() {
 
             })
 
-        //inside createTeamMember after 
+        //based on input by user: addEngineer function called when user chooses engineer as next employee to add
         function addEngineer() {
 
             inquirer.prompt([{
@@ -140,6 +143,8 @@ function createTeam() {
 
                 ])
 
+                //responses to cli prompts added to relevant arrays
+
                 .then(answers => {
 
                     const engineerNameUpper = answers.engineerName.substring(0, 1).toUpperCase() + answers.engineerName.substring(1);
@@ -156,7 +161,7 @@ function createTeam() {
                     createTeamMember();
                 })
         }
-
+// questions generated when user selects intern as next employee
         function addIntern() {
 
             inquirer.prompt([{
@@ -185,8 +190,8 @@ function createTeam() {
 
                 ])
                 .then(answers => {
-
-                    const internNameUpper = answers.internName.substring(0, 1).toUpperCase() + answers.internName.substring(1);
+                //responses to cli prompts added to relevant arrays
+                const internNameUpper = answers.internName.substring(0, 1).toUpperCase() + answers.internName.substring(1);
 
                     
 
@@ -200,7 +205,8 @@ function createTeam() {
 
                 })
         }
-
+// function called once user decides no more employees need to be added
+// buildTeam will create a new html file
         function buildTeam() {
 
             fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
@@ -210,7 +216,6 @@ function createTeam() {
 
     }
 };
-// createManager();
 
 
 
