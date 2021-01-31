@@ -1,9 +1,9 @@
 
 // create constants to 
-const Engineer = require("./Develop/lib/Engineer");
-const Intern = require("./Develop/lib/Intern");
-const Manager = require("./Develop/lib/Manager")
-const render = require("./Develop/lib/htmlRenderer");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager")
+const render = require("./lib/htmlRenderer");
 const path = require("path");
 const inquirer = require("inquirer");
 const fs = require("fs");
